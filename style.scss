@@ -1,0 +1,128 @@
+@import "variables";
+@import "mixins";
+@import "fonts";
+@import "extend";
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.navbar {
+    background-color: $navbarcolor;
+    @include flexbox($items: center, $justify: space-around);
+    &_right {
+        @include flexbox($justify: space-around, $items: center);
+        min-height: 50px;
+        &_listbox {
+            width: 100%;
+            // background-color: aqua;
+            @include flexbox($justify: space-around, $items: center);
+            min-height: inherit;
+            &_ilbox a {
+                color: white;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.developing {
+    background-image: url("../assets/82fcd3_47a465bb9c6f4b52a0cc83f281806af8~mv2.avif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    height: 600px;
+    @include flexbox($justify: center, $items: flex-end);
+
+    &_box {
+        // background-color: aqua;
+        @include flexbox($justify: center, $items: center, $direction: column);
+        min-height: 250px;
+
+        &_textbox {
+            @include flexbox($justify: center, $items: center, $direction: column);
+            &_btnbox {
+                min-height: 80px;
+                // background-color: aqua;
+                @include flexbox($justify: center, $items: center, $direction: column);
+                .btn {
+                    @extend %button;
+                }
+            }
+        }
+    }
+}
+
+.flexbox {
+    min-height: 600px;
+    // background-color: aqua;
+    @include flexbox($justify: space-around, $items: center);
+
+    &_minibox {
+        min-height: 300px;
+        width: 25%;
+
+        &_btnbox{
+            .btn{
+                @extend %button;
+             }
+         }
+    }
+}
+
+.aboutdiv{
+    width: 100%;
+    min-height: 600px;
+    position: relative;
+    .box {
+        background-image: url("../assets/82fcd3_47a465bb9c6f4b52a0cc83f281806af8~mv2.avif");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        min-height: 600px;
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.5;
+
+        @include flexbox($justify:center, $items:center, $direction:column);
+       
+     }
+
+    .textbox{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: black;
+        font-size: 20px;
+        font-weight: bold;
+        z-index: 2;
+     }
+ }
+
+.heightbox{
+    // oxlarin rengi hansidir
+    // marginden basqa ne vermek olar ayirmaq ucun
+    margin-top: 15px;
+    min-height: 500px;
+ }
+
+ .maindiv{
+    min-height: 500px;
+    // background-color: antiquewhite;
+  }
+.flexbox{
+    margin-top: 15px; 
+ }
+
+
